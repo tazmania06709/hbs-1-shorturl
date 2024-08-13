@@ -1,5 +1,7 @@
 const express = require('express');
 const { create } = require("express-handlebars");
+require('dotenv').config();
+require('./database/db');
 
 
 const app = express();
@@ -23,6 +25,8 @@ app.set("views", "./views");
 app.use('/', require('./routes/home'));
 app.use('/auth', require('./routes/auth'));
 
+const PORT = process.env.PORT || 3000;
+
 app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+    console.log('Server is running on port:' + PORT);
 });
