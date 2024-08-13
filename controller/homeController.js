@@ -14,8 +14,10 @@ const leerUrls = async (req, res) => {
 const agregarUrl = async (req, res) => {
     try {
         const url = new Url({ origin: 'estatico' });
+        // await url.save();
         console.log(url);
-        res.send(ur, "Ok");
+       // res.send("Agregado");
+        res.redirect("/");
     } catch (error) { 
         console.log(error);
         res.send("Error algo fallo");
@@ -24,4 +26,5 @@ const agregarUrl = async (req, res) => {
 
 module.exports = {
     leerUrls,
+    agregarUrl,
 };

@@ -1,14 +1,10 @@
 const express = require('express');
-const { leerUrls } = require('../controller/homeController');
+const { leerUrls, agregarUrl } = require('../controller/homeController');
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    leerUrls(req, res);
-});
+router.get("/",leerUrls);
 
-router.post('/', (req, res) => {
-    agregarUrl(req, res);
-});
-
+router.post("/", agregarUrl);
+ 
 
 module.exports = router;

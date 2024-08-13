@@ -1,12 +1,11 @@
-// require = require('esm')(module);
 const mongoose = require('mongoose');
-const { nanoid } = require('nanoid');
+const { v4: uuidv4 } = require('uuid');
 
 const { Schema } = mongoose;
 
 const urlSchema = new Schema({
     origin: { type: String, unique: true, required: true },
-    shortUrl: { type: String, required: true, unique: true, default: nanoid(6) }
+    shortUrl: { type: String, required: true, unique: true, default: uuidv4(6) }
     // clicks: { type: Number, default: 0 },
     // createdBy: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     // createdAt: { type: Date, default: Date.now },
